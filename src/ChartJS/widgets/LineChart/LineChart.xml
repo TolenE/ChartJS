@@ -8,8 +8,31 @@
     </icon>
 
     <properties>
-        <!-- Appearance -->
-        <property key="width" type="integer" required="true" defaultValue="500">
+    	  <!-- Added by BT -->
+    	  <property key="polltime" type="integer" required="true" defaultValue="0">
+            <caption>Auto refresh</caption>
+            <category>Animation</category>
+						<description>Auto refresh the chart if a positive value is entered</description>
+      </property>
+        <property key="xscaletype" type="enumeration" required="true" defaultValue="linear">
+            <caption>X-axis Scale type</caption>
+            <category>Settings Line Chart</category>
+            <description>X-axis scale type, see http://www.chartjs.org/docs/#chart-configuration-creating-a-chart-with-options</description>
+            <enumerationValues>
+                <enumerationValue key="linear">linear</enumerationValue>
+                <enumerationValue key="time">time</enumerationValue>
+                <enumerationValue key="logarithmic">logarithmic</enumerationValue>
+                <enumerationValue key="category">category</enumerationValue>
+                <enumerationValue key="radialLinear">radialLinear</enumerationValue>
+            </enumerationValues>
+        </property>
+        <property key="xscaleformat" type="string" required="false" defaultValue="">
+            <caption>X-axis format</caption>
+            <category>Settings Line Chart</category>
+            <description>X-axis format, see http://www.chartjs.org/docs/#scales-display-formats. Needed for date time</description>
+        </property>
+      <!-- Appearance -->
+      <property key="width" type="integer" required="true" defaultValue="500">
             <caption>Width</caption>
             <category>Appearance</category>
 			<description>Initial width of the chart canvas, will be ignored when responsive property is set to 'Yes'</description>

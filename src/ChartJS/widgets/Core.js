@@ -76,6 +76,8 @@ define([
 
         _tooltipNode: null,
 
+       		polltime	: 0,
+
         startup: function () {
             logger.debug(this.id + ".startup");
 
@@ -139,6 +141,7 @@ define([
 
         update: function (obj, callback) {
             logger.debug(this.id + ".update");
+            this._stop();
             this._mxObj = obj;
 
             if (this._handle !== null) {
@@ -159,8 +162,24 @@ define([
                 domStyle.set(this.domNode, "display", "none");
             }
 
+						this._start();
             mendix.lang.nullExec(callback);
         },
+        
+		   	_start: function() {
+						if(this.polltime > 0 && this.refreshhandle == null)
+						this.refreshhandle = setInterval(dojo.hitch(this, function() {
+							  // Load data again.
+                this._loadData();
+                domStyle.set(this.domNode, "display", "");
+						}), this.polltime * 1000);
+				},
+				
+				_stop: function() {
+						if (this.refreshhandle != null)
+						clearInterval(this.refreshhandle);
+			        this.refreshhandle = null;
+				},
 
         _loadData: function () {
             logger.debug(this.id + "._loadData");
@@ -217,6 +236,7 @@ define([
 
         uninitialize: function () {
             logger.debug(this.id + ".uninitialize");
+            this._stop();
             if (this._handle !== null) {
                 mx.data.unsubscribe(this._handle);
             }

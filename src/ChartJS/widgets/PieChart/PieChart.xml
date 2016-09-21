@@ -9,6 +9,12 @@
     </icon>
 
     <properties>
+    	  <!-- Added by BT -->
+    	  <property key="polltime" type="integer" required="true" defaultValue="0">
+            <caption>Auto refresh</caption>
+            <category>Animation</category>
+						<description>Auto refresh the chart if a positive value is entered</description>
+      </property>
         <!-- Appearance -->
         <property key="width" type="integer" required="true" defaultValue="500">
             <caption>Width</caption>

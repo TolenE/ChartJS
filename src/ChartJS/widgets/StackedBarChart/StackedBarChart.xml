@@ -6,6 +6,12 @@
     <icon>iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAgMAAABinRfyAAAAA3NCSVQICAjb4U/gAAAADFBMVEUAAABUVFQKCgr///+YierFAAAABHRSTlP///8AQCqp9AAAAAlwSFlzAAALEgAACxIB0t1+/AAAABV0RVh0Q3JlYXRpb24gVGltZQAxLzE0LzE1ZGtS1wAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAqSURBVAiZY/gPBAwfbPiRif9/+JlBLGYkFkTW/i+IxYtMgA1oYAACEAEAd/4eWjJEzeQAAAAASUVORK5CYII=</icon>
 
     <properties>
+    	  <!-- Added by BT -->
+    	  <property key="polltime" type="integer" required="true" defaultValue="0">
+            <caption>Auto refresh</caption>
+            <category>Animation</category>
+						<description>Auto refresh the chart if a positive value is entered</description>
+      </property>
         <!-- Appearance -->
         <property key="width" type="integer" required="true" defaultValue="500">
             <caption>Width</caption>

@@ -165,7 +165,20 @@ define([
                                     color: this.scaleGridLineColor,
                                     lineWidth: this.scaleLineWidth
                                 },
-                                type: "category",
+                                type: this.xscaletype,
+                                time: {
+								                    displayFormats: {
+								                        millisecond: this.xscaleformat,
+								                        second: this.xscaleformat,
+								                        minute: this.xscaleformat,
+								                        hour: this.xscaleformat,
+								                        day: this.xscaleformat,
+								                        week: this.xscaleformat,
+								                        month: this.xscaleformat,
+								                        quarter: this.xscaleformat,
+								                        year: this.xscaleformat
+								                    }
+                								},                                
                                 id: "x-axis-0",
                                 ticks : {
                                     display: this.scaleShowLabelsBottom,
